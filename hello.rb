@@ -94,6 +94,89 @@ name = "taguchi"
 p name.empty? # false
 p name.include?("g") # true
 
+# lesson08
+puts "----------------lesson08----------------"
+
+colors = ["red","blue","yellow"]
+
+p colors[0] # 添字 red
+p colors[-1] # 添字 yellow
+p colors[0..2] # 添字0~2まで
+p colors[0...2] # 添え字 0から2の直前まで
+p colors[5] # nil
+
+# 要素の変更
+colors[0] = "pink"
+# 要素の変更1から2
+colors[1..2] = ["white","black"]
+# 要素の追加
+colors.push("gold")
+# pushは以下のようにも書ける
+colors << "silver"
+p colors
+
+# 要素の数
+p colors.size
+# 並び替え
+p colors.sort
 
 
+# lesson09
+puts "----------------lesson09----------------"
 
+# ハッシュ
+# key / valueのペア
+
+# taguchi 200
+# fkoji 400
+
+scores = {"taguchi" => 200, "fkoji" => 400}
+# キーには、シンボルオブジェクトがよく使われる。
+# :から始まる識別子のようなobject
+# 文字列よりも処理が高速。（大事！！）
+scores = {:taguchi => 200, :fkoji => 400}
+# よく使うので、さらに短い記法も用意されている
+scores = {taguchi: 200, fkoji: 400}
+
+# ハッシュの要素の取得
+p scores[:taguchi]
+# 値の書き換え
+scores[:fkoji] = 600
+p scores
+
+# ハッシュの数
+p scores.size
+# キーだけ
+p scores.keys
+# 値だけ
+p scores.values
+# :taguchiというキーが存在するか？
+p scores.has_key?(:taguchi)
+
+
+# lesson10
+puts "----------------lesson10----------------"
+
+# 変換
+x = 50
+y = "3"
+
+# 53にしたい
+# 失敗する
+# p x + y
+# 文字列を整数に変換(to_integer)
+p x + y.to_i
+# 文字列を浮動小数点に変換（to_float）
+p x + y.to_f
+
+# 503にしたい
+# 文字列に変換（to_string）
+p x.to_s + y
+
+# ハッシュと配列の相互変換
+scores = {taguchi: 200, fkoji: 400}
+p scores
+# 配列に変換（to_array）
+p scores.to_a
+# 配列をハッシュに戻す
+p scores.to_a.to_h
