@@ -28,7 +28,9 @@ class AdminUser < User
     sayPrivate
   end
 
-  # 親クラスのprivateメソッドのオーバーライド
+  # 親クラスのprivateメソッドのオーバーライドができる
+  # そうなの！？
+  # javaと違って、サブクラスから呼び出せたり、オーバーライドできる。
   def sayPrivate
     puts "private from Admin"
   end
